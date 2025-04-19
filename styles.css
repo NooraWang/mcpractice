@@ -1,0 +1,334 @@
+/* Main Styles for Math Practice App */
+:root {
+    --primary-color: #4a6bff;
+    --secondary-color: #ff6b6b;
+    --accent-color: #ffbe0b;
+    --background-color: #f9f7f7;
+    --text-color: #333;
+    --success-color: #48c774;
+    --error-color: #ff6b6b;
+    --neutral-color: #f8f9fa;
+    --border-radius: 12px;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Comic Sans MS', 'Chalkboard SE', 'Arial Rounded MT Bold', sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    background-color: white;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    border: 3px dashed var(--primary-color);
+}
+
+header h1 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+/* Section Styles */
+section {
+    background-color: white;
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 30px;
+}
+
+section h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+/* Selection Section */
+.selection-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+}
+
+.selection-group {
+    width: 100%;
+    max-width: 800px;
+}
+
+.topic-options, .difficulty-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.topic-option, .difficulty-option {
+    background-color: var(--neutral-color);
+    border: 2px solid #ddd;
+    border-radius: var(--border-radius);
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    min-width: 150px;
+    text-align: center;
+}
+
+.topic-option i, .difficulty-option i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.difficulty-option i {
+    margin-bottom: 0;
+    margin-right: 4px;
+}
+
+.difficulty-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.difficulty-option span {
+    margin-top: 10px;
+}
+
+.star-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.topic-option span, .difficulty-option span {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.topic-option:hover, .difficulty-option:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+    box-shadow: var(--box-shadow);
+}
+
+.topic-option.selected, .difficulty-option.selected {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.topic-option.selected i, .difficulty-option.selected i {
+    color: white;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 0.3s;
+    background-color: var(--primary-color);
+    color: white;
+    margin: 20px auto;
+}
+
+.btn:hover:not(:disabled) {
+    background-color: #3a5bd9;
+    transform: translateY(-2px);
+}
+
+.btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Questions Section */
+.questions-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.header-info {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px dashed var(--primary-color);
+}
+
+.header-info h2 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.header-info span {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Question Item Styles */
+.question-item {
+    background-color: var(--neutral-color);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.question-text {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.options-list {
+    list-style-type: none;
+}
+
+.option-item {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 12px 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border: 2px solid #eee;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.option-item:hover {
+    border-color: var(--primary-color);
+}
+
+.option-item.selected {
+    border-color: var(--primary-color);
+    background-color: #e6efff;
+}
+
+.option-item.correct {
+    border-color: var(--success-color);
+    background-color: rgba(72, 199, 116, 0.1);
+}
+
+.option-item.wrong {
+    border-color: var(--error-color);
+    background-color: rgba(255, 107, 107, 0.1);
+}
+
+.option-item .result-icon {
+    margin-left: auto;
+    font-size: 1.4rem;
+}
+
+.result-icon.correct {
+    color: var(--success-color);
+}
+
+.result-icon.wrong {
+    color: var(--error-color);
+}
+
+/* Actions */
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.actions .btn {
+    margin: 0;
+}
+
+/* Modal Styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+}
+
+.modal-content h2 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.modal-content p {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+#correct-count, #total-count {
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: var(--primary-color);
+}
+
+#celebration-meme, #try-again-meme {
+    width: 100%;
+    max-height: 300px;
+    object-fit: contain;
+    margin: 15px 0;
+    border-radius: 8px;
+}
+
+/* Utility Classes */
+.hidden {
+    display: none !important;
+} 

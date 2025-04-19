@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Practice - Multiple Choice</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Math Practice Questions</h1>
+            <p>Choose a topic and difficulty level to start practicing!</p>
+        </header>
+
+        <main>
+            <!-- Selection Section -->
+            <section id="selection-section">
+                <div class="selection-container">
+                    <div class="selection-group">
+                        <h2>Select a Topic</h2>
+                        <div class="topic-options">
+                            <div class="topic-option" data-topic="addition">
+                                <i class="fas fa-plus"></i>
+                                <span>Addition</span>
+                            </div>
+                            <div class="topic-option" data-topic="subtraction">
+                                <i class="fas fa-minus"></i>
+                                <span>Subtraction</span>
+                            </div>
+                            <div class="topic-option" data-topic="multiplication">
+                                <i class="fas fa-times"></i>
+                                <span>Multiplication</span>
+                            </div>
+                            <div class="topic-option" data-topic="division">
+                                <i class="fas fa-divide"></i>
+                                <span>Division</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="selection-group">
+                        <h2>Select Difficulty</h2>
+                        <div class="difficulty-options">
+                            <div class="difficulty-option" data-difficulty="low">
+                                <div class="star-container">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span>Easy</span>
+                            </div>
+                            <div class="difficulty-option" data-difficulty="medium">
+                                <div class="star-container">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span>Medium</span>
+                            </div>
+                            <div class="difficulty-option" data-difficulty="high">
+                                <div class="star-container">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span>Hard</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button id="start-practice" class="btn" disabled>Start Practice</button>
+                </div>
+            </section>
+
+            <!-- Questions Section -->
+            <section id="questions-section" class="hidden">
+                <div class="questions-container">
+                    <div class="header-info">
+                        <h2 id="practice-topic">Topic: <span></span></h2>
+                        <h2 id="practice-difficulty">Difficulty: <span></span></h2>
+                    </div>
+                    
+                    <div id="questions-list">
+                        <!-- Questions will be generated dynamically here -->
+                    </div>
+
+                    <div class="actions">
+                        <button id="check-answers" class="btn">Check Answers</button>
+                        <button id="try-again" class="btn hidden">Try Again</button>
+                        <button id="back-to-selection" class="btn">Back to Topics</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Celebration Modal -->
+            <div id="celebration-modal" class="modal hidden">
+                <div class="modal-content">
+                    <h2>Congratulations! 🎉</h2>
+                    <p>You got all the answers correct!</p>
+                    <img id="celebration-meme" src="well-done-meme.jpg" alt="Celebration Meme">
+                    <button id="continue-practice" class="btn">Continue Practice</button>
+                </div>
+            </div>
+
+            <!-- Try Again Modal -->
+            <div id="try-again-modal" class="modal hidden">
+                <div class="modal-content">
+                    <h2>Nice try! 🤔</h2>
+                    <p>You've got <span id="correct-count">0</span> out of <span id="total-count">5</span> questions correct!</p>
+                    <img id="try-again-meme" src="try-again-meme.jpg" alt="Try Again Meme">
+                    <button id="continue-try-again" class="btn">Try Again</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
